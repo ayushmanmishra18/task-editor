@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Premium Styled Form</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="bg-zinc-900 text-gray-100 font-sans min-h-screen flex items-center justify-center">
+    <div class="main w-4/5 max-w-4xl mx-auto bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+      <div class="form p-6">
+        <h2 class="text-2xl font-semibold text-center text-gray-100 mb-6">Create a Task</h2>
+        <form action="/create" method="post" class="space-y-4">
+          <input
+            class="block w-full px-4 py-3 bg-gray-700 rounded-lg border border-gray-600 text-gray-300 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            type="text"
+            placeholder="Title goes here.."
+            name="title"
+          />
+          <textarea
+            class="block w-full px-4 py-3 bg-gray-700 rounded-lg border border-gray-600 text-gray-300 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            placeholder="Write your task details here..."
+            rows="5"
+            name="details"></textarea>
+          <input
+            type="submit"
+            value="Create Task"
+            class="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 rounded-lg shadow-md cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-400"
+          />
+        </form>
+      </div>
+
+      <div class="tasks p-6 border-t border-gray-700">
+        <h1 class="text-xl font-bold mb-4">Your Tasks</h1>
+        <% if (files.length > 0) { %>
+          <% files.forEach(function (file) { %>
+            <div class="task-item bg-gray-700 rounded-lg p-4 mb-4 shadow-md">
+              <h2 class="text-lg font-semibold"><%= file %></h2>
+              <p class="text-sm text-gray-400">File created successfully!</p>
+              <a
+              href="/task/<%= file %>"
+              class="text-blue-400 hover:underline mt-2 block"
+              >Read More</a
+            >
+            
+            </div>
+          <% }); %>
+        <% } else { %>
+          <h3>No Tasks Yet</h3>
+        <% } %>
+      </div>
+    </div>
+  </body>
+</html>
