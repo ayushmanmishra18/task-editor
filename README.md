@@ -67,7 +67,7 @@ project-directory/
 4. Start the application server:
 
    ```bash
-   node app.js
+   node index.js
    ```
 
 5. Access the application through:
@@ -84,7 +84,7 @@ project-directory/
 
 ## Code Explanation 📜🖋️🛠️
 
-### `app.js`
+### `index.js`
 
 - **Route ****`/`**:
   - Fetches task filenames from the `files` directory and renders them using `index.ejs`.
@@ -120,5 +120,5 @@ project-directory/
 - Introduce user authentication to secure task data integrity.
 - Transition from file-based storage to a robust database solution (e.g., MongoDB) for enhanced scalability and performance.
 
-##
+
 
